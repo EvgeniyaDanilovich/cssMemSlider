@@ -2,6 +2,7 @@ const carousel = document.querySelector('.carousel');
 const carouselItems = document.querySelectorAll('.carousel__item');
 const dots = document.querySelectorAll('.controls__dot');
 const texts = document.querySelectorAll('.signature__text');
+const dotsArea = document.querySelectorAll('.controls__area');
 
 let count = 0;
 let prevCount = 0;
@@ -36,6 +37,9 @@ dots.forEach(function (dot, i) {
 	dot.addEventListener('click', function () {
 		prevCount = count;
 		count = i;
+
+		dotsArea[prevCount].classList.remove('active');
+		dotsArea[count].classList.add('active');
 
 		if (prevCount > count) {
 			remove('to-right');

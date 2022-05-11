@@ -93,6 +93,7 @@ h6 {
 body {
   color: #000;
   font-size: 14px;
+  background-color: #3E3E42;
 }
 
 .wrapper {
@@ -176,14 +177,41 @@ body {
           align-items: center;
   margin: 0px 0px 0px 5px;
   width: 30px;
-  height: 30px;
+  height: 50px;
   cursor: pointer;
 }
 
+.controls__dot:hover .controls__area {
+  border: 2px solid #fff;
+}
+
+.controls__dot:hover .controls__area.active {
+  background-color: #fff;
+}
+
+.controls__dot:active {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.controls__dot:active .controls__area {
+  background-color: #fff;
+}
+
 .controls__area {
-  width: 15px;
-  height: 15px;
-  background-color: #8c3e88;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid #8ead9b;
+  border-radius: 50%;
+}
+
+.controls__area:active {
+  border: 2px solid #fff;
+}
+
+.controls__area.active {
+  background-color: #8ead9b;
 }
 
 .signature {
@@ -194,7 +222,9 @@ body {
 .signature__text {
   width: 100%;
   display: none;
-  font-size: 20px;
+  font-size: 18px;
+  color: #fff;
+  letter-spacing: 1.6px;
   -webkit-animation: 0.5s ease-in-out;
           animation: 0.5s ease-in-out;
 }
