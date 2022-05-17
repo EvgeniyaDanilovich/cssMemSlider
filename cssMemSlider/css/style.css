@@ -115,14 +115,6 @@ body {
 }
 
 .carousel {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-top: 5%;
 }
 
@@ -132,54 +124,13 @@ body {
   }
 }
 
-.carousel__container {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel__item {
-  display: none;
-  position: relative;
-  padding: 0px 0px 59% 0px;
-  width: 100%;
-  -webkit-animation: 0.9s ease-in-out;
-          animation: 0.9s ease-in-out;
-}
-
-.carousel__item img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.carousel__item.active {
-  display: block;
-}
-
-.carousel__item.next {
-  display: block;
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
 .controls {
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
   margin-top: 5%;
   margin-bottom: 5%;
 }
@@ -192,6 +143,25 @@ body {
   }
 }
 
+.controls label {
+  display: none;
+  position: relative;
+  padding: 0px 0px 59% 0px;
+  width: 100%;
+  -webkit-animation: 0.9s ease-in-out;
+          animation: 0.9s ease-in-out;
+}
+
+.controls label img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .controls__dot {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -202,18 +172,19 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-left: 5%;
-  width: 40px;
-  height: 40px;
+  margin-left: 3%;
+  margin-top: 3%;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 2px solid #c74426;
 }
 
-.controls__dot:hover .controls__area {
-  border: 2px solid #fff;
-}
-
-.controls__dot:hover .controls__area.active {
-  background-color: #fff;
+.controls__dot:hover {
+  border: 2px solid #8ead9b;
 }
 
 .controls__dot:active {
@@ -221,8 +192,56 @@ body {
           transform: scale(1.2);
 }
 
-.controls__dot:active .controls__area {
-  background-color: #fff;
+.controls__dot:checked {
+  border: 2px solid #8ead9b;
+}
+
+.controls__dot:nth-child(1):checked ~ .first {
+  display: block;
+  -webkit-animation-name: right;
+          animation-name: right;
+}
+
+.controls__dot:nth-child(2):checked ~ .second {
+  display: block;
+  -webkit-animation-name: right;
+          animation-name: right;
+}
+
+.controls__dot:nth-child(3):checked ~ .third {
+  display: block;
+  -webkit-animation-name: right;
+          animation-name: right;
+}
+
+.controls__dot:nth-child(4):checked ~ .fourth {
+  display: block;
+  -webkit-animation-name: right;
+          animation-name: right;
+}
+
+.controls__dot:nth-child(1):checked ~ .first-text {
+  display: block;
+  -webkit-animation-name: slideDown;
+          animation-name: slideDown;
+}
+
+.controls__dot:nth-child(2):checked ~ .second-text {
+  display: block;
+  -webkit-animation-name: slideDown;
+          animation-name: slideDown;
+}
+
+.controls__dot:nth-child(3):checked ~ .third-text {
+  display: block;
+  -webkit-animation-name: slideDown;
+          animation-name: slideDown;
+}
+
+.controls__dot:nth-child(4):checked ~ .fourth-text {
+  display: block;
+  -webkit-animation-name: slideDown;
+          animation-name: slideDown;
 }
 
 .controls__area {
@@ -241,73 +260,58 @@ body {
   background-color: #8ead9b;
 }
 
-.signature {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+.controls .text {
+  color: #fff;
+  margin-top: 3%;
+}
+
+.controls .nth:nth-child(1), .controls .nth:nth-child(2), .controls .nth:nth-child(3), .controls .nth:nth-child(4) {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
+@media (max-width: 767.98px) {
+  .controls .nth:nth-child(1), .controls .nth:nth-child(2), .controls .nth:nth-child(3), .controls .nth:nth-child(4) {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+.controls .nth:nth-child(5), .controls .nth:nth-child(6), .controls .nth:nth-child(7), .controls .nth:nth-child(8) {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.controls .nth:nth-child(9), .controls .nth:nth-child(10), .controls .nth:nth-child(11), .controls .nth:nth-child(12) {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-  position: relative;
-  overflow: hidden;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
 }
 
-.signature__text {
-  width: 100%;
-  display: none;
-  color: #fff;
-  letter-spacing: 0.15em;
-  -webkit-animation: 0.5s ease-in-out;
-          animation: 0.5s ease-in-out;
-}
-
-.signature__text.active {
-  display: block;
-}
-
-.signature__text.next {
-  display: block;
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
-.remove-text {
-  -webkit-animation-name: slideUp;
-          animation-name: slideUp;
-}
-
-.show-text {
-  -webkit-animation-name: slideDown;
-          animation-name: slideDown;
-}
-
-@-webkit-keyframes slideUp {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+@media (max-width: 767.98px) {
+  .controls .nth:nth-child(9), .controls .nth:nth-child(10), .controls .nth:nth-child(11), .controls .nth:nth-child(12) {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
   }
 }
 
 @-webkit-keyframes slideDown {
   0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -317,8 +321,8 @@ body {
 
 @keyframes slideDown {
   0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%);
   }
   100% {
     -webkit-transform: translateY(0);
@@ -326,54 +330,10 @@ body {
   }
 }
 
-.to-left {
-  -webkit-animation-name: left;
-          animation-name: left;
-}
-
-.from-left {
-  -webkit-animation-name: left;
-          animation-name: left;
-  animation-direction: reverse;
-}
-
-.to-right {
-  -webkit-animation-name: right;
-          animation-name: right;
-  animation-direction: reverse;
-}
-
-.from-right {
-  -webkit-animation-name: right;
-          animation-name: right;
-}
-
-@-webkit-keyframes left {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
-@keyframes left {
-  from {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-}
-
 @-webkit-keyframes right {
   from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
   to {
     -webkit-transform: translateX(0);
@@ -383,8 +343,8 @@ body {
 
 @keyframes right {
   from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
   }
   to {
     -webkit-transform: translateX(0);

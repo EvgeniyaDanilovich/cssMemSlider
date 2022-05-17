@@ -16,31 +16,24 @@
 		<main class="page">
 			<div class="container">
 				<div class="carousel">
-					<div class="carousel__container">
-						<div class="carousel__item active "><img src="img/01.webp" alt="meme"></div>
-						<div class="carousel__item "><img src="img/02.jpeg" alt="meme"></div>
-						<div class="carousel__item"><img src="img/03.png" alt="meme"></div>
-						<div class="carousel__item"><img src="img/04.png" alt="meme"></div>
-					</div>
 					<div class="carousel__controls controls">
-						<div class="controls__dot">
-							<div class="controls__area active"></div>
-						</div>
-						<div class="controls__dot">
-							<div class="controls__area"></div>
-						</div>
-						<div class="controls__dot">
-							<div class="controls__area"></div>
-						</div>
-						<div class="controls__dot">
-							<div class="controls__area"></div>
-						</div>
-					</div>
-					<div class="carousel__signature signature">
-						<p class="signature__text active">The internet is this culture?</p>
-						<p class="signature__text">Where's the funny</p>
-						<p class="signature__text">I guess I could use a little social interaction.</p>
-						<p class="signature__text">When I'm home alone and someone knocks on the door</p>
+
+						<input class="controls__dot nth" type="radio" name="dot" id="first" checked>
+						<input class="controls__dot nth" type="radio" name="dot" id="second">
+						<input class="controls__dot nth" type="radio" name="dot" id="third">
+						<input class="controls__dot nth" type="radio" name="dot" id="fourth">
+
+						<label for="first" class="image first nth"><img src="img/01.webp" alt="meme"></label>
+						<label for="second" class="image second nth"><img src="img/02.jpeg" alt="meme"></label>
+						<label for="third" class="image third nth"><img src="img/03.png" alt="meme"></label>
+						<label for="fourth" class="image fourth nth"><img src="img/04.png" alt="meme"></label>
+
+						<label for="first" class="text first-text nth">The internet is this culture?</label>
+						<label for="second" class="text second-text nth">Where's the funny</label>
+						<label for="third" class="text third-text nth">I guess I could use a little social
+							interaction.</label>
+						<label for="fourth" class="text fourth-text nth">When I'm home alone and someone knocks on the
+							door</label>
 					</div>
 				</div>
 			</div>
